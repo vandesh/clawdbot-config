@@ -27,6 +27,7 @@ A clean, portable setup that keeps **secrets off GitHub** while making it easy t
 - **`install-config-sync.sh`** → Linux user service to auto‑commit config changes
 - **`sync-config.sh`** → sanitizes secrets → commits updated config
 - **`stellar-setup.sh`** → one‑shot “new server” setup (auto‑detects OS)
+- **`smoke-test.sh`** → dry‑run checks (no system changes)
 
 ---
 
@@ -129,6 +130,11 @@ git push -u origin main
 ---
 
 # 🧪 Quick sanity check
+
+Run the dry‑run smoke test:
+```bash
+bash smoke-test.sh
+```
 
 - `.env` **never** goes into Git (gitignored)
 - `clawdbot.json` uses **`${VAR}` placeholders**
