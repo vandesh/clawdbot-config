@@ -11,5 +11,5 @@ set +a
 cp ./clawdbot.json ~/.clawdbot/clawdbot.json
 
 # Restart gateway to pick up changes
-gateway_cmd="clawdbot gateway restart"
+gateway_cmd="moltbot gateway restart"
 $gateway_cmd

@@ -1,7 +1,0 @@
-[Unit]
-Description=Sync Clawdbot config to git repo
-
-[Service]
-Type=oneshot
-WorkingDirectory=%h/clawdbot-config
-ExecStart=/usr/bin/env bash -lc 'bash %h/clawdbot-config/sync-config.sh'
