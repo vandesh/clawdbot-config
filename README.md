@@ -27,7 +27,9 @@ A clean, portable setup that keeps **secrets off GitHub** while making it easy t
 - **`install-service-windows.ps1`** → Windows Scheduled Task (moltbot)
 - **`install-config-sync.sh`** → Linux user service to auto‑commit config changes
 - **`sync-config.sh`** → sanitizes secrets → commits updated config
-- **`install-config-sync-autopush.sh`** → Linux user service to auto‑commit **and push**
+- **`install-config-sync-autopush.sh`** → Linux auto‑commit **and push**
+- **`install-config-sync-autopush-macos.sh`** → macOS auto‑commit **and push**
+- **`install-config-sync-autopush-windows.ps1`** → Windows auto‑commit **and push**
 - **`sync-config-push.sh`** → sync + push (requires git creds)
 - **`stellar-setup.sh`** → one‑shot “new server” setup (auto‑detects OS)
 - **`smoke-test.sh`** → dry‑run checks (no system changes)
@@ -124,15 +126,27 @@ systemctl --user restart moltbot-config-sync.path
 
 ---
 
-## 🚀 Auto‑sync + auto‑push (Linux only)
+## 🚀 Auto‑sync + auto‑push
+Requires git credentials configured for push.
+
+### Linux
 ```bash
 bash install-config-sync-autopush.sh
 ```
-Requires git credentials configured for push.
-
 Manual restart:
 ```bash
 systemctl --user restart moltbot-config-sync-push.path
+```
+
+### macOS
+```bash
+bash install-config-sync-autopush-macos.sh
+```
+
+### Windows (PowerShell Admin)
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force
+.\install-config-sync-autopush-windows.ps1
 ```
 
 ---
