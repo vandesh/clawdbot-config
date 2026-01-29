@@ -6,8 +6,8 @@ set -euo pipefail
 # - Install gateway service (OS-aware)
 # - Install auto-sync watcher (Linux only)
 
-CONFIG_DIR="${CLAWDBOT_CONFIG_DIR:-$HOME/clawdbot-config}"
-ENV_FILE="${CLAWDBOT_ENV_FILE:-$CONFIG_DIR/.env}"
+CONFIG_DIR="${MOLTBOT_CONFIG_DIR:-$HOME/moltbot-config}"
+ENV_FILE="${MOLTBOT_ENV_FILE:-$CONFIG_DIR/.env}"
 OS="$(uname -s)"
 
 if [[ ! -d "$CONFIG_DIR" ]]; then

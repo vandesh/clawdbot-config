@@ -1,9 +1,9 @@
 # Requires PowerShell (run as Administrator)
-# Creates a Scheduled Task that starts Clawdbot on logon
+# Creates a Scheduled Task that starts Moltbot on logon
 
-$ConfigDir = $env:CLAWDBOT_CONFIG_DIR
-if (-not $ConfigDir) { $ConfigDir = "$env:USERPROFILE\clawdbot-config" }
-$EnvFile = $env:CLAWDBOT_ENV_FILE
+$ConfigDir = $env:MOLTBOT_CONFIG_DIR
+if (-not $ConfigDir) { $ConfigDir = "$env:USERPROFILE\moltbot-config" }
+$EnvFile = $env:MOLTBOT_ENV_FILE
 if (-not $EnvFile) { $EnvFile = "$ConfigDir\.env" }
 
 if (-not (Test-Path $EnvFile)) {
@@ -11,9 +11,9 @@ if (-not (Test-Path $EnvFile)) {
   exit 1
 }
 
-$Action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -Command `"`n$envPath = '$EnvFile';`nGet-Content $envPath | ForEach-Object { if ($_ -match '^(.*?)=(.*)$') { [Environment]::SetEnvironmentVariable($matches[1], $matches[2]) } };`nclawdbot gateway start`""
+$Action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -Command `"`n$envPath = '$EnvFile';`nGet-Content $envPath | ForEach-Object { if ($_ -match '^(.*?)=(.*)$') { [Environment]::SetEnvironmentVariable($matches[1], $matches[2]) } };`nmoltbot gateway start`""
 $Trigger = New-ScheduledTaskTrigger -AtLogOn
 $Principal = New-ScheduledTaskPrincipal -UserId $env:USERNAME -RunLevel Highest
 
-Register-ScheduledTask -TaskName "ClawdbotGateway" -Action $Action -Trigger $Trigger -Principal $Principal -Force
-Write-Host "Scheduled task created: ClawdbotGateway"
+Register-ScheduledTask -TaskName "MoltbotGateway" -Action $Action -Trigger $Trigger -Principal $Principal -Force
+Write-Host "Scheduled task created: MoltbotGateway"

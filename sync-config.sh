@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-CONFIG_DIR="${CLAWDBOT_CONFIG_DIR:-$HOME/clawdbot-config}"
-ENV_FILE="${CLAWDBOT_ENV_FILE:-$CONFIG_DIR/.env}"
-SRC="${CLAWDBOT_CONFIG_SRC:-$HOME/.clawdbot/clawdbot.json}"
+CONFIG_DIR="${MOLTBOT_CONFIG_DIR:-$HOME/moltbot-config}"
+ENV_FILE="${MOLTBOT_ENV_FILE:-$CONFIG_DIR/.env}"
+SRC="${MOLTBOT_CONFIG_SRC:-$HOME/.clawdbot/clawdbot.json}"
 DST="$CONFIG_DIR/clawdbot.json"
 
 if [[ ! -f "$SRC" ]]; then
@@ -38,7 +38,7 @@ if ! cmp -s "$TMP" "$DST"; then
   mv "$TMP" "$DST"
   cd "$CONFIG_DIR"
   git add clawdbot.json
-  git commit -m "Sync clawdbot config" >/dev/null 2>&1 || true
+  git commit -m "Sync moltbot config" >/dev/null 2>&1 || true
 else
   rm -f "$TMP"
 fi

@@ -33,7 +33,7 @@
       "models": {
         "openai-codex/gpt-5.2-codex": {}
       },
-      "workspace": "${CLAWDBOT_WORKSPACE}",
+      "workspace": "${MOLTBOT_WORKSPACE}",
       "compaction": {
         "mode": "safeguard"
       },
