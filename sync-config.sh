@@ -38,7 +38,7 @@ if ! cmp -s "$TMP" "$DST"; then
   mv "$TMP" "$DST"
   cd "$CONFIG_DIR"
   git add openclaw.json
-  git commit -m "Sync openclaw config" >/dev/null 2>&1 || true
+  git commit -m "Sync OpenClaw config" >/dev/null 2>&1 || true
 else
   rm -f "$TMP"
 fi
