@@ -1,5 +1,5 @@
 [Unit]
-Description=Watch Moltbot config for changes (sync + push)
+Description=Watch OpenClaw config for changes (sync + push)
 
 [Path]
 PathChanged=%h/.openclaw/openclaw.json

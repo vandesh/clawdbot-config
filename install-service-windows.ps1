@@ -1,5 +1,5 @@
 # Requires PowerShell (run as Administrator)
-# Creates a Scheduled Task that starts Moltbot on logon
+# Creates a Scheduled Task that starts OpenClaw on logon
 
 $ConfigDir = $env:OPENCLAW_CONFIG_DIR
 if (-not $ConfigDir) { $ConfigDir = "$env:USERPROFILE\openclaw-config" }
@@ -15,5 +15,5 @@ $Action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfil
 $Trigger = New-ScheduledTaskTrigger -AtLogOn
 $Principal = New-ScheduledTaskPrincipal -UserId $env:USERNAME -RunLevel Highest
 
-Register-ScheduledTask -TaskName "MoltbotGateway" -Action $Action -Trigger $Trigger -Principal $Principal -Force
-Write-Host "Scheduled task created: MoltbotGateway"
+Register-ScheduledTask -TaskName "OpenClawGateway" -Action $Action -Trigger $Trigger -Principal $Principal -Force
+Write-Host "Scheduled task created: OpenClawGateway"

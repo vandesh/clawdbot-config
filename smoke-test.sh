@@ -26,7 +26,7 @@ if git grep -n -E "sk-|AIza|DEEPGRAM_API_KEY=" -- . ':!:.env.example' ':!:smoke-
   exit 1
 fi
 
-echo "[4/5] Moltbot command usage in scripts"
+echo "[4/5] OpenClaw command usage in scripts"
 if git grep -n -E "openclaw gateway" -- . ':!:smoke-test.sh' >/dev/null; then
   git grep -n -E "openclaw gateway" -- . ':!:smoke-test.sh' || true
   echo "Found openclaw command usage" >&2

@@ -1,10 +1,10 @@
-# 🚀 Moltbot Config — Cosmic Edition
+# 🚀 OpenClaw Config — Cosmic Edition
 
-A clean, portable setup that keeps **secrets off GitHub** while making it easy to move Moltbot to any server.
+A clean, portable setup that keeps **secrets off GitHub** while making it easy to move OpenClaw to any server.
 
-✅ Syncs Moltbot config to a Git repo with a **single setup**
+✅ Syncs OpenClaw config to a Git repo with a **single setup**
 
-✅ Creates a service to **auto‑start** Moltbot
+✅ Creates a service to **auto‑start** OpenClaw
 
 ✅ Creates and auto‑runs a **config sync watcher** (Linux)
 
@@ -197,4 +197,4 @@ Not applicable.
 
 ---
 
-If anything feels off, feel free to open a PR, or report, or better yet - use your own Moltbot ❤️ to fix and PR 🛰️
+If anything feels off, feel free to open a PR, or report, or better yet - use your own OpenClaw ❤️ to fix and PR 🛰️

@@ -1,5 +1,5 @@
 [Unit]
-Description=Sync Moltbot config to git repo
+Description=Sync OpenClaw config to git repo
 
 [Service]
 Type=oneshot

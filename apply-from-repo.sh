@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Apply repo config to local Clawdbot/Moltbot config and restart gateway
+# Apply repo config to local Clawdbot/OpenClaw config and restart gateway
 CONFIG_DIR="${OPENCLAW_CONFIG_DIR:-$HOME/openclaw-config}"
 TARGET_CONFIG_DIR="${OPENCLAW_TARGET_CONFIG_DIR:-$HOME/.openclaw}"
 

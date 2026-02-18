@@ -9,5 +9,5 @@ $Action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfil
 $Trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 5) -RepetitionDuration ([TimeSpan]::MaxValue)
 $Principal = New-ScheduledTaskPrincipal -UserId $env:USERNAME -RunLevel Highest
 
-Register-ScheduledTask -TaskName "MoltbotConfigSyncPush" -Action $Action -Trigger $Trigger -Principal $Principal -Force
-Write-Host "Scheduled task created: MoltbotConfigSyncPush (runs every 5 minutes)"
+Register-ScheduledTask -TaskName "OpenClawConfigSyncPush" -Action $Action -Trigger $Trigger -Principal $Principal -Force
+Write-Host "Scheduled task created: OpenClawConfigSyncPush (runs every 5 minutes)"
