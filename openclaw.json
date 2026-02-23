@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.2.17",
-    "lastTouchedAt": "2026-02-23T12:31:15.482Z"
+    "lastTouchedAt": "2026-02-23T12:51:38.019Z"
   },
   "env": {
     "vars": {}
@@ -71,7 +71,9 @@
         "kill",
         "pkill",
         "grep",
-        "bash"
+        "mkdir",
+        "tee",
+        "systemctl"
       ]
     }
   },
